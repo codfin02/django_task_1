@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+    <h1>영화 목록</h1>
+    {% for movie in movie_list %}
+        <a href="/movie/{{ forloop.counter0 }}/">{{ movie.title }}</a><br>
+    {% endfor %}
+</body>
+</html>
+

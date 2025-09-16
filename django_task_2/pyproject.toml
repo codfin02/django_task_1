@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "djago_task_2"
+version = "0.1.0"
+description = "Chapter 02 Django todo assignment"
+authors = ["Your Name <you@example.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.6.0"]
+build-backend = "poetry.core.masonry.api"

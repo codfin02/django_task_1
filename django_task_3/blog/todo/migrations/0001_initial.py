@@ -1,0 +1,33 @@
+# Generated manually for initial Todo model
+from django.conf import settings
+from django.db import migrations, models
+import django.db.models.deletion
+
+
+class Migration(migrations.Migration):
+    initial = True
+
+    dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='Todo',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=100, verbose_name='제목')),
+                ('description', models.TextField(blank=True, verbose_name='설명')),
+                ('due_date', models.DateField(blank=True, null=True, verbose_name='마감일')),
+                ('is_completed', models.BooleanField(default=False, verbose_name='완료 여부')),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='작성일자')),
+                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='수정일자')),
+                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='todos', to=settings.AUTH_USER_MODEL, verbose_name='작성자')),
+            ],
+            options={
+                'verbose_name': '할 일',
+                'verbose_name_plural': '할 일 목록',
+                'ordering': ['is_completed', 'due_date', '-created_at'],
+            },
+        ),
+    ]

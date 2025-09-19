@@ -27,3 +27,4 @@ cd django_task_6
 - 댓글 작성/수정/삭제: 상세에서 폼 제출 또는 버튼으로 동작
 - 관리자: `/admin/`에서 Todo/Comment 확인 및 관리
 
+PR: chapter_06
